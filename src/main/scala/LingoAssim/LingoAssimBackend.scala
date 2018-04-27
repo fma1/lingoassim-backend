@@ -9,6 +9,8 @@ import com.twitter.util.Await
 import com.google.auth.oauth2.GoogleCredentials;
 import java.io.FileInputStream
 
+import lingoassim.database._
+
 case class English(phrase: String, japanese: Japanese)
 case class Japanese(phrase: String)
 
