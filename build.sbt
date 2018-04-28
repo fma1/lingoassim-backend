@@ -69,7 +69,7 @@ libraryDependencies ++= Seq(
   "com.google.api.client" % "google-api-client-json" % "1.2.3-alpha"
 )
 
-fork := true
+fork in run := true
 
 ivyScala := ivyScala.value map { _.copy(overrideScalaVersion = true) }
 
@@ -80,6 +80,10 @@ resolvers ++= Seq(
   "Typesafe Snapshots" at "http://repo.typesafe.com/typesafe/snapshots/",
   "Secured Central Repository" at "https://repo1.maven.org/maven2",
   Resolver.sonatypeRepo("snapshots")
+)
+
+addCompilerPlugin(
+  "org.scalamacros" % "paradise" % "2.1.0" cross CrossVersion.full
 )
 
 // scalariform
