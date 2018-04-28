@@ -122,7 +122,6 @@ object Seed {
   def seedDatabase(): Unit = {
     println("Seeding database...")
     Db.transaction {
-      //dummyWords.foreach({ case (word, languageCode) => CommonWords.create(word, languageCode).foreach(commonWord => Db.save(commonWord)) })
       dummyWords.foreach({ case (word, languageCode) => Db.save(CommonWord(word, languageCode)) })
       pairPhrases.foreach({ case (japPhrase, engPhrase) => createAndAssociatePair(japPhrase, engPhrase) })
     }
