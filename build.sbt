@@ -69,7 +69,9 @@ libraryDependencies ++= Seq(
   "com.google.api.client" % "google-api-client-json" % "1.2.3-alpha"
 )
 
-fork in run := true
+fork := true
+
+cancelable in Global := true
 
 ivyScala := ivyScala.value map { _.copy(overrideScalaVersion = true) }
 

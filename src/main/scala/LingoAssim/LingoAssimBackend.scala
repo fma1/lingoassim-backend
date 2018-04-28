@@ -55,8 +55,8 @@ object LingoAssimBackend extends App {
         )
       } else {
         SingleQuestion(
-          japPhrase.replaceAll(",", " "),
-          engPhrase.replaceAll(",", ""),
+          japPhrase.replaceAll(",", ""),
+          engPhrase.replaceAll(",", " "),
           rand.shuffle(engPhrase.split(",").toList ++
             rand.shuffle(englishWords).take(5))
         )
